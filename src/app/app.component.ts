@@ -12,8 +12,4 @@ export class AppComponent {
     private service: TransferenciaServiceService
   ){}
 
-  trasferir($event: any){
-    this.service.adicionar($event)
-  }
-
 }

@@ -1,21 +1,24 @@
-<div>
-  <table class="tabela">
-    <thead>
-      <tr class="tabela__cabecalho">
-        <th class="tabela__cabecalho__conteudo">valor</th>
-        <th class="tabela__cabecalho__conteudo">destino</th>
-        <th class="tabela__cabecalho__conteudo">Data</th>
-      </tr>
-    </thead>
-    <tBody *ngIf="tranferencias?.length > 0; else listavazia">
-      <tr class="tabela__linha" *ngFor="let tranferencia of tranferencias">
-        <td class="tabela__conteudo">{{ tranferencia.valor | currency }}</td>
-        <td class="tabela__conteudo">{{ tranferencia.destino }}</td>
-        <td class="tabela__conteudo">{{ tranferencia.data | date: short }}</td>
-      </tr>
-    </tBody>
-  </table>
-</div>
-<ng-template #listavazia>
-  <p>Nenhuma operação cadastrada</p>
-</ng-template>
+  <h2 class="titulo">Transferências</h2>
+  <div>
+    <table class="tabela">
+      <thead>
+        <tr class="tabela__cabecalho">
+          <th class="tabela__cabecalho__conteudo">valor</th>
+          <th class="tabela__cabecalho__conteudo">destino</th>
+          <th class="tabela__cabecalho__conteudo">Data</th>
+        </tr>
+      </thead>
+      <tBody *ngIf="tranferencias?.length > 0; else listavazia">
+        <tr class="tabela__linha" *ngFor="let tranferencia of tranferencias">
+          <td class="tabela__conteudo">{{ tranferencia.valor | currency }}</td>
+          <td class="tabela__conteudo">{{ tranferencia.destino }}</td>
+          <td class="tabela__conteudo">
+            {{ tranferencia.data | date: short }}
+          </td>
+        </tr>
+      </tBody>
+    </table>
+  </div>
+  <ng-template #listavazia>
+    <p>Nenhuma operação cadastrada</p>
+  </ng-template>
